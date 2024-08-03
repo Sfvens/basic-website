@@ -1,0 +1,52 @@
+name: CD
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+
+  update-s3-static-site:
+    name: 'Update S3 Static Site'
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+
+    # configure credentials
+    - name: Configure AWS Credentials (stg)
+      if: ${{ github.ref_name == 'stg' }}
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-region: us-west-1
+        role-to-assume: ${{ secrets.IAM_ROLE_ARN_STG }}
+        role-session-name: gha-session
+        
+
+    - name: Configure AWS Credentials (prd)
+      if: ${{ github.ref_name == 'prd' }}
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-region: us-west-1
+        role-to-assume: ${{ secrets.IAM_ROLE_ARN_PRD }}
+        role-session-name: gha-session
+
+    - name: Configure AWS Credentials (main)
+      if: ${{ github.ref_name == 'main' }}
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-region: us-west-1
+        role-to-assume: ${{ secrets.IAM_ROLE_ARN_SANDBOX }}
+        role-session-name: gha-session
+        
+    # checkout the repo
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    # update s3 with contents of repo
+    - name: Deploy S3 Static Site
+      run: aws s3 sync ./frontend/ s3://basicwebsite.com --delete
