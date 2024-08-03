@@ -49,4 +49,4 @@ jobs:
 
     # update s3 with contents of repo
     - name: Deploy S3 Static Site
-      run: aws s3 sync ./frontend/ s3://basicwebsite.com --delete
+      run: aws s3 sync ./frontend/ s3://basicwebsite.click --delete
