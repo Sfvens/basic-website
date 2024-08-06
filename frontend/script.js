@@ -1,2 +1,11 @@
-let d = Date();
-document.body.innerHTML += "<h1 class=\"date\"> Today's date is: " + d + "</h1>";
+
+function getDate() {
+  $(document).ready(
+    function() {
+      setInterval(function() {
+        let d = Date();
+        $("#show").text("Today's date is: " + d);
+      }, 100);
+    }
+  );
+}
