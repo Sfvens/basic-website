@@ -1,7 +1,32 @@
+body {
+	background-color: lightskyblue;
+}
 .header {
-	background-color: teal;
+	display: flex;
+	background-color: blue;
+	padding: 1em;
+	color: white;
+	
+	/* Border */
+	border-style: solid;
+	border-color: red;
+	border-radius: 1em;
+
+	/* Alignment */
+	align-items: center;
+	justify-content: space-between;
 }
 
 .date {
 	color: red;
 }
+
+.menu-items {
+	background-color: blueviolet;
+	width: 20em;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	color: white;
+}
+
