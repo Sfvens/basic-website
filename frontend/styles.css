@@ -6,7 +6,7 @@ body {
 	background-color: blue;
 	padding: 1em;
 	color: white;
-	
+
 	/* Border */
 	border-style: solid;
 	border-color: red;
@@ -28,5 +28,30 @@ body {
 	flex-flow: row nowrap;
 	justify-content: space-around;
 	color: white;
+	border-style: dashed;
+	border-color: yellow;
+	border-radius: 1em;
 }
 
+.footer {
+	display: flex;
+	align-items: center;
+	border-style: solid;
+	border-radius: 1em;
+	border-color: red;
+	background-color: blue;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	width:99%;
+	height: 7em;
+}
+
+.octocat {
+	padding: 1em;
+}
+
+.octocat:hover {
+	opacity: 100%;
+	background-color: white;
+}
