@@ -4,11 +4,16 @@
 
 <head>
   <title>Basic Website</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="../libraries/jquery-3.7.1.js"></script>
-  <script src="../script.js"></script>
+  <script src="libraries/jquery-3.7.1.js"></script>
+  <script src="script.js"></script>
+  <script>
+    $(function() {
+      $('#includedSmiley').load("includedSmiley.html");
+    });
+  </script>
 </head>
 
 <body>
@@ -24,9 +29,10 @@
   <h1 class="date" id="show">
     <script> getDate() </script>
   </h1>
+  <div id="includedSmiley"></div>
   <div class="footer">
     <a href="https://github.com/Sfvens/basic-website" target="_blank" rel="noopener noreferrer">
-      <img class="octocat" src="../assets/octocat-white-round.svg"></img>
+      <img class="octocat" src="assets/octocat-white-round.svg"></img>
     </a>
   </div>
 </body>
