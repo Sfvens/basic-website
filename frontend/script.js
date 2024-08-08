@@ -15,10 +15,11 @@ function importComponents() {
     let components = $("[data-include]");
     $.each(components, function() {
       let component = $(this).data('include');
-      if (component !== 'page') {
-        let componentFile = 'components/' + component + '.html';
-        $(this).load(componentFile);
+      let componentFile = '/pages/components/' + component + '.html';
+      if (component === 'page') {
+        componentFile = '/pages/home/home.html';
       }
+      $(this).load(componentFile);
     })
   });
 }
@@ -29,7 +30,7 @@ function injectPage(pageName) {
     $.each(components, function() {
       let component = $(this).data('include');
       if (component === 'page') {
-        let componentFile = pageName + '/' + pageName + '.html';
+        let componentFile = '/pages/' + pageName + '/' + pageName + '.html';
         $(this).load(componentFile);
       }
     })

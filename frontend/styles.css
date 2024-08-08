@@ -17,20 +17,52 @@ body {
 	justify-content: space-between;
 }
 
+.header button {
+	background-color: inherit;
+	color: white;
+	cursor:pointer;
+	border: none;
+}
+
+.header h1:hover {
+  opacity: 75%;
+}
+
 .date {
 	color: red;
 }
 
 .menu-items {
-	background-color: blueviolet;
+	background-color: black;
+	padding: 1em;
 	width: 20em;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-around;
 	color: white;
 	border-style: dashed;
-	border-color: yellow;
+	border-color: white;
 	border-radius: 1em;
+}
+
+.menu-items button {
+	background-color: black;
+	border-style: solid;
+	border-radius: 1em;
+	border-color: white;
+	padding: .5em 2em
+}
+
+.menu-items button:hover {
+	border-color: red;
+}
+
+.menu-items button p {
+	margin: 0px;
+}
+.menu-items button:hover p {
+	opacity: 75%;
+	color: red;
 }
 
 .footer {
