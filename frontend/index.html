@@ -11,27 +11,24 @@
   <script src="script.js"></script>
   <script>
     $(function() {
-      $('#includedSmiley').load("includedSmiley.html");
+      let components = $("[data-include]");
+      $.each(components, function() {
+        let componentFile = 'components/' + $(this).data('include') + '.html';
+        $(this).load(componentFile);
+      })
     });
   </script>
 </head>
 
 <body>
-  <div class="header">
-    <h1>Basic Website</h1>
-    <div class="menu-items">
-      <p><a href="error.html">Blog</a></p>
-      <p>About</p>
-      <p>Gallery</p>
-    </div>
-  </div>
+  <div data-include="header"></div>
+  
   <p> I am living the web dev dream woooo. </p>
+  
   <h1 class="date" id="show">
     <script> getDate() </script>
   </h1>
-  <div id="includedSmiley">
-    <p>Am I above or below????</p>
-  </div>
+  
   <div class="footer">
     <a href="https://github.com/Sfvens/basic-website" target="_blank" rel="noopener noreferrer">
       <img class="octocat" src="assets/octocat-white-round.svg"></img>
