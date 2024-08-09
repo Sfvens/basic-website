@@ -82,6 +82,7 @@ body {
 
 .footer {
 	display: flex;
+	justify-content: flex-end;
 	align-items: center;
 	border-style: solid;
 	border-radius: 1em;
@@ -91,7 +92,7 @@ body {
 	position: sticky;
 	width:99.5%;
 	height: 7em;
-	margin-top: .5em;
+	margin-top: 1em;
 	margin-bottom: .5em;
 }
 
@@ -100,7 +101,8 @@ body {
 }
 
 .octocat {
-	padding: 2em;
+	padding-left: 3em;
+	padding-right: 3em;
   filter: invert(100%) sepia(4%) saturate(3%) hue-rotate(298deg) brightness(104%) contrast(100%);
 }
 
