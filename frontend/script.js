@@ -47,3 +47,16 @@ function injectComponents() {
     })
   });
 }
+
+function injectPost(postName) {
+  $(function() {
+    let components = $("[data-include]");
+    $.each(components, function() {
+      let component = $(this).data('include');
+      if (component === 'page') {
+        let componentFile = '/pages/blog/posts/' + postName + '.html';
+        $(this).load(componentFile);
+      }
+    })
+  });
+}
