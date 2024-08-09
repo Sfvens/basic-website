@@ -1,7 +1,5 @@
-body {
-	color: blueviolet;
-	background-color: black;
-}
+/* Header */
+
 .header {
 	display: flex;
 	background-color: black;
@@ -34,9 +32,7 @@ body {
 	border-color: blue;
 }
 
-.date {
-	color: blue;
-}
+/* Menu Items */
 
 .menu-items {
 	background-color: black;
@@ -75,6 +71,15 @@ body {
 	color: red;
 }
 
+/* Page */
+
+body {
+	color: blueviolet;
+	background-color: black;
+}
+
+/* Footer */
+
 .footer {
 	display: flex;
 	align-items: center;
@@ -83,10 +88,10 @@ body {
 	border-color: white;
 	background-color: black;
 	color: white;
-	position: absolute;
-	bottom: 0;
-	width:98.5%;
+	position: sticky;
+	width:99.5%;
 	height: 7em;
+	margin-top: .5em;
 	margin-bottom: .5em;
 }
 
@@ -95,7 +100,7 @@ body {
 }
 
 .octocat {
-	padding: 1em;
+	padding: 2em;
   filter: invert(100%) sepia(4%) saturate(3%) hue-rotate(298deg) brightness(104%) contrast(100%);
 }
 

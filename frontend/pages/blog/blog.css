@@ -1,0 +1,33 @@
+.post {
+  border-style: solid;
+  border-radius: 1em;
+  border-color: white;
+  padding: 1em;
+}
+
+.post button {
+	background-color: inherit;
+	color: white;
+	cursor:pointer;
+	border: none;
+}
+
+.post:hover {
+  border-color: red;
+  border-style: dashed;
+}
+
+.post:hover button h2{
+  text-decoration: underline solid red;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}

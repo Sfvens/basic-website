@@ -36,3 +36,14 @@ function injectPage(pageName) {
     })
   });
 }
+
+function injectComponents() {
+  $(function() {
+    let components = $("[data-include]");
+    $.each(components, function() {
+      let component = $(this).data('include');
+      let componentFile = '/pages/components/' + component + '.html';
+      $(this).load(componentFile);
+    })
+  });
+}
