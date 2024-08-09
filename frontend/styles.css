@@ -1,15 +1,16 @@
 body {
-	background-color: lightskyblue;
+	color: blueviolet;
+	background-color: black;
 }
 .header {
 	display: flex;
-	background-color: blue;
+	background-color: black;
 	padding: 1em;
 	color: white;
 
 	/* Border */
 	border-style: solid;
-	border-color: red;
+	border-color: white;
 	border-radius: 1em;
 
 	/* Alignment */
@@ -25,11 +26,16 @@ body {
 }
 
 .header h1:hover {
-  opacity: 75%;
+  opacity: 100%;
+	color: red;
+}
+
+.header:hover {
+	border-color: blue;
 }
 
 .date {
-	color: red;
+	color: blue;
 }
 
 .menu-items {
@@ -53,6 +59,10 @@ body {
 	padding: .5em 2em
 }
 
+.menu-items:hover {
+	border-color: green;
+}
+
 .menu-items button:hover {
 	border-color: red;
 }
@@ -61,7 +71,7 @@ body {
 	margin: 0px;
 }
 .menu-items button:hover p {
-	opacity: 75%;
+	opacity: 100%;
 	color: red;
 }
 
@@ -70,20 +80,26 @@ body {
 	align-items: center;
 	border-style: solid;
 	border-radius: 1em;
-	border-color: red;
-	background-color: blue;
+	border-color: white;
+	background-color: black;
 	color: white;
 	position: absolute;
 	bottom: 0;
-	width:99%;
+	width:98.5%;
 	height: 7em;
+	margin-bottom: .5em;
+}
+
+.footer:hover {
+	border-color: blue;
 }
 
 .octocat {
 	padding: 1em;
+  filter: invert(100%) sepia(4%) saturate(3%) hue-rotate(298deg) brightness(104%) contrast(100%);
 }
 
 .octocat:hover {
 	opacity: 100%;
-	background-color: white;
+	filter: invert(38%) sepia(100%) saturate(6805%) hue-rotate(354deg) brightness(91%) contrast(130%);
 }
