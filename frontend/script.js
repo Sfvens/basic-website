@@ -35,6 +35,13 @@ function injectPage(pageName) {
       }
     });
   });
+  
+  pagePath = (pageName === 'home') ? '' : '/' + pageName;
+  window.history.pushState(
+    {},
+    '',
+    window.location.origin + pagePath
+  );
 }
 
 function injectComponents() {
@@ -72,4 +79,11 @@ function injectPost(postName) {
       }
     })
   });
+}
+
+window.onpopstate = () => {
+  pagePath = window.location.pathname;
+  newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
+  console.log(newPage);
+  injectPage(newPage);
 }
