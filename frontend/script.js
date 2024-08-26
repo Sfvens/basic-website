@@ -33,7 +33,7 @@ function injectPage(pageName) {
         let componentFile = '/pages/' + pageName + '/' + pageName + '.html';
         $(this).load(componentFile);
       }
-    })
+    });
   });
 }
 
@@ -44,6 +44,19 @@ function injectComponents() {
       let component = $(this).data('include');
       let componentFile = '/pages/components/' + component + '.html';
       $(this).load(componentFile);
+    })
+  });
+}
+
+function injectPageComponents() {
+  $(function() {
+    let components = $("[data-include]");
+    $.each(components, function() {
+      let component = $(this).data('include');
+      if (component !== 'page') {
+        let componentFile = '/pages/components/' + component + '.html';
+        $(this).load(componentFile);
+      }
     })
   });
 }
