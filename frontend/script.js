@@ -1,40 +1,38 @@
+function injectHome() {
+  const pageDiv = document.getElementById('page');
+  pageDiv.innerHTML = home;
+  getDate();
+}
 
 function getDate() {
-  $(document).ready(
-    function() {
-      setInterval(function() {
-        let d = Date();
-        $("#show").text("Today's date is: " + d);
-      }, 100);
-    }
-  );
+  let d = Date();
+  const showH1 = document.getElementById('show');
+  showH1.innerHTML = d;
 }
 
-function importComponents() {
-  $(function() {
-    let components = $("[data-include]");
-    $.each(components, function() {
-      let component = $(this).data('include');
-      let componentFile = '/pages/components/' + component + '.html';
-      if (component === 'page') {
-        componentFile = '/pages/home/home.html';
-      }
-      $(this).load(componentFile);
-    })
-  });
+function injectBlog() {
+  const pageDiv = document.getElementById('page');
+  pageDiv.innerHTML = blog;
+  getPosts();
 }
 
-function injectPage(pageName) {
-  $(function() {
-    let components = $("[data-include]");
-    $.each(components, function() {
-      let component = $(this).data('include');
-      if (component === 'page') {
-        let componentFile = '/pages/' + pageName + '/' + pageName + '.html';
-        $(this).load(componentFile);
-      }
-    });
-  });
+function getPosts() {
+  let posts = document.getElementById('post');
+  while (posts !== null) {
+    posts.innerHTML = 'wot';
+    posts.id = '';
+    posts = document.getElementById('post');
+  }
+}
+
+function injectAbout() {
+  const pageDiv = document.getElementById('page');
+  pageDiv.innerHTML = about;
+}
+
+function injectGallery() {
+  const pageDiv = document.getElementById('page');
+  pageDiv.innerHTML = gallery;
 }
 
 function injectComponents() {
@@ -44,32 +42,6 @@ function injectComponents() {
       let component = $(this).data('include');
       let componentFile = '/pages/components/' + component + '.html';
       $(this).load(componentFile);
-    })
-  });
-}
-
-function injectPageComponents() {
-  $(function() {
-    let components = $("[data-include]");
-    $.each(components, function() {
-      let component = $(this).data('include');
-      if (component !== 'page') {
-        let componentFile = '/pages/components/' + component + '.html';
-        $(this).load(componentFile);
-      }
-    })
-  });
-}
-
-function injectPost(postName) {
-  $(function() {
-    let components = $("[data-include]");
-    $.each(components, function() {
-      let component = $(this).data('include');
-      if (component === 'page') {
-        let componentFile = '/pages/blog/posts/' + postName + '.html';
-        $(this).load(componentFile);
-      }
     })
   });
 }

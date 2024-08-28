@@ -1,0 +1,6 @@
+const about =
+`<p>Hi! My name is Sam Carlsen. I'm a recent computer science graduate (june 2024) from Brigham Young University!
+  I built this website largely to get under the hood a little bit and explore what it's like to build a website without any frameworks.
+  Currently, I rely on jQuery for some things, but I'd like to eventually get to a point where all functionality is implemented solely 
+  in good ol' fashioned JS. This may eventually become my portfolio website or a blog, depending on how things turn out.
+  Stay tuned for more updates!</p>`
