@@ -19,10 +19,15 @@ function injectBlog() {
 function getPosts() {
   let posts = document.getElementById('post');
   while (posts !== null) {
-    posts.innerHTML = 'wot';
+    posts.innerHTML = post;
     posts.id = '';
     posts = document.getElementById('post');
   }
+}
+
+function injectPost() {
+  const pageDiv = document.getElementById('page');
+  pageDiv.innerHTML = uniquePost;
 }
 
 function injectAbout() {
@@ -33,15 +38,4 @@ function injectAbout() {
 function injectGallery() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = gallery;
-}
-
-function injectComponents() {
-  $(function() {
-    let components = $("[data-include]");
-    $.each(components, function() {
-      let component = $(this).data('include');
-      let componentFile = '/pages/components/' + component + '.html';
-      $(this).load(componentFile);
-    })
-  });
 }
