@@ -21,12 +21,12 @@
 </head>
 
 <body>
-  <div class="header">  
-    <button onclick="injectHome()"><h1>Basic Website</h1></button>
+  <div class="header">
+    <button onclick="pushWindowState(''); injectHome();"><h1>Basic Website</h1></button>
     <div class="menu-items">
-      <button onclick="injectBlog()"><p>Blog</p></button>
-      <button onclick="injectAbout()"><p>About</p></button>
-      <button onclick="injectGallery()"><p>Gallery</p></button>
+      <button onclick="pushWindowState('/blog'); injectBlog();"><p>Blog</p></button>
+      <button onclick="pushWindowState('/about');  injectAbout();"><p>About</p></button>
+      <button onclick="pushWindowState('/gallery'); injectGallery();"><p>Gallery</p></button>
     </div>
   </div>
 

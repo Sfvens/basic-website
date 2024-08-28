@@ -29,7 +29,6 @@ function injectPost() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = uniquePost;
 }
-
 function injectAbout() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = about;
@@ -38,4 +37,40 @@ function injectAbout() {
 function injectGallery() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = gallery;
+}
+
+function pushWindowState(path) {
+  window.history.pushState(
+    {},
+    '',
+    window.location.origin + path,
+  );
+}
+
+window.onpopstate = () => {
+  pagePath = window.location.pathname;
+  newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
+  injectPage(newPage);
+}
+
+function injectPage(page) {
+  switch(page) {
+    case 'home':
+      injectHome();
+      break;
+    case 'blog':
+      injectBlog();
+      break;
+    case 'blog/uniquePost':
+      injectPost();
+      break;
+    case 'about':
+      injectAbout();
+      break;
+    case 'gallery':
+      injectGallery();
+      break;
+    default:
+      console.log('WARNING: attempted nonexistent path in injectPage() => ' + page)
+  }
 }
