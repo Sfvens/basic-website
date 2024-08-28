@@ -40,6 +40,10 @@ function injectGallery() {
 }
 
 function pushWindowState(path) {
+  pagePath = window.location.pathname;
+  if (window.location.pathname.slice(1) === path.slice(1)) { // a reduced way of comparing these slightly different path formats 
+    return;                                                     // relies on (''.slice(1) === '') being true
+  }
   window.history.pushState(
     {},
     '',
