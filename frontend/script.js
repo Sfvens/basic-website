@@ -78,3 +78,7 @@ function injectPage(page) {
       console.log('WARNING: attempted nonexistent path in injectPage() => ' + page)
   }
 }
+
+window.onbeforeunload = () => {
+  return "I have taken your ability to refresh muahahahhah";
+}
