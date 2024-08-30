@@ -53,6 +53,10 @@ function pushWindowState(path) {
 }
 
 window.onpopstate = () => {
+  route();
+}
+
+function route() {
   pagePath = window.location.pathname;
   newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
   injectPage(newPage);
@@ -81,12 +85,4 @@ function injectPage(page) {
       window.location.pathname = '/'
       injectHome();
   }
-}
-
-const routes = ['home', 'blog', 'blog/uniquePost', 'about', 'gallery'];
-
-function route() {
-  pagePath = window.location.pathname;
-  newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
-  injectPage(newPage);
 }
