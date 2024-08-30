@@ -6,7 +6,7 @@ function injectHome() {
 
 function getDate() {
   let d = Date();
-  const showH1 = document.getElementById('show');
+  const showH1 = document.getElementById('date');
   showH1.innerHTML = d;
 }
 
@@ -29,6 +29,7 @@ function injectPost() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = uniquePost;
 }
+
 function injectAbout() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = about;
@@ -37,6 +38,7 @@ function injectAbout() {
 function injectGallery() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = gallery;
+  getDate();
 }
 
 function pushWindowState(path) {
@@ -77,7 +79,7 @@ function injectPage(page) {
     default:
       console.log('WARNING: attempted nonexistent path in injectPage() => ' + page)
       alert("You sly dog! That path unfortunately does not exist (yet) so you've been routed home 😏. Have a nice day!")
-      window.location.pathname = ''
+      window.location.pathname = '/'
       injectHome();
   }
 }
