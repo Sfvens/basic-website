@@ -78,3 +78,9 @@ function injectPage(page) {
       console.log('WARNING: attempted nonexistent path in injectPage() => ' + page)
   }
 }
+
+function route() {
+  pagePath = window.location.pathname;
+  newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
+  injectPage(newPage);
+}
