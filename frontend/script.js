@@ -77,6 +77,7 @@ function injectPage(page) {
     default:
       console.log('WARNING: attempted nonexistent path in injectPage() => ' + page)
       alert("You sly dog! That path unfortunately does not exist (yet) so you've been routed home 😏. Have a nice day!")
+      window.location.pathname = ''
       injectHome();
   }
 }
