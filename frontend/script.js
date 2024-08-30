@@ -76,12 +76,15 @@ function injectPage(page) {
       break;
     default:
       console.log('WARNING: attempted nonexistent path in injectPage() => ' + page)
+      alert("You sly dog! That path unfortunately does not exist (yet) so you've been routed home 😏. Have a nice day!")
+      injectHome();
   }
 }
+
+const routes = ['home', 'blog', 'blog/uniquePost', 'about', 'gallery'];
 
 function route() {
   pagePath = window.location.pathname;
   newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
-  console.log("newPage:"  + newPage);
   injectPage(newPage);
 }
