@@ -82,5 +82,6 @@ function injectPage(page) {
 function route() {
   pagePath = window.location.pathname;
   newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
+  console.log("newPage:"  + newPage);
   injectPage(newPage);
 }
