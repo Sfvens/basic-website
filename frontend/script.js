@@ -79,6 +79,8 @@ function injectPage(page) {
   }
 }
 
-window.onbeforeunload = () => {
-  return "I have taken your ability to refresh muahahahhah";
+function route() {
+  pagePath = window.location.pathname;
+  newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
+  injectPage(newPage);
 }
