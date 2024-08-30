@@ -38,7 +38,6 @@ function injectAbout() {
 function injectGallery() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = gallery;
-  getDate();
 }
 
 function pushWindowState(path) {
