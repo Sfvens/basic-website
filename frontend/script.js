@@ -2,6 +2,7 @@ function injectHome() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = home;
   getDate();
+  setInterval(getDate, 1000);
 }
 
 function getDate() {
