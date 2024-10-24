@@ -1,14 +1,16 @@
 function injectHome() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = home;
-  getDate();
-  setInterval(getDate, 1000);
+  getHomeDate();
+  setInterval(getHomeDate, 1000); //this will be running in the background always AND resetting when going home
 }
 
-function getDate() {
-  let d = Date();
-  const showH1 = document.getElementById('date');
-  showH1.innerHTML = d;
+function getHomeDate() {
+  if (window.location.pathname === '/') {
+    let d = Date();
+    const showH1 = document.getElementById('date');
+    showH1.innerHTML = d;
+  }
 }
 
 function injectBlog() {
