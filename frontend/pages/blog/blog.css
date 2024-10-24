@@ -26,7 +26,7 @@
   height: auto;
 }
 
-.grid {
+#blog-grid {
   max-width: 65%;
   margin: 0 auto;
   display: grid;

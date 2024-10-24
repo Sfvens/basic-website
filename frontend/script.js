@@ -18,11 +18,9 @@ function injectBlog() {
 }
 
 function getPosts() {
-  let posts = document.getElementById('post');
-  while (posts !== null) {
-    posts.innerHTML = post;
-    posts.id = '';
-    posts = document.getElementById('post');
+  let postContainers = document.getElementById('blog-grid').getElementsByClassName('postContainer');
+  for (let i = 0; i < postContainers.length; i++) {
+    postContainers[i].innerHTML = post;
   }
 }
 
