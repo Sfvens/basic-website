@@ -1,27 +1,27 @@
-.post {
+.postSummary {
   border-style: solid;
   border-radius: 1em;
   border-color: white;
   padding: 1em;
 }
 
-.post button {
+.postSummary button {
 	background-color: inherit;
 	color: white;
 	cursor:pointer;
 	border: none;
 }
 
-.post:hover {
+.postSummary:hover {
   border-color: red;
   border-style: dashed;
 }
 
-.post:hover button h2{
+.postSummary:hover button h2{
   text-decoration: underline solid red;
 }
 
-.post-image {
+.post-summary-image {
   max-width: 100%;
   height: auto;
 }

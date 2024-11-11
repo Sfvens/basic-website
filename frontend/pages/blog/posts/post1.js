@@ -1,0 +1,1 @@
+const post1 = `<p>This is an article I wrote. It is short. ahhhhhhhhh.</p>`

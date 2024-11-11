@@ -16,19 +16,19 @@ function getHomeDate() {
 function injectBlog() {
   const pageDiv = document.getElementById('page');
   pageDiv.innerHTML = blog;
-  getPosts();
+  getPostSummaries();
 }
 
-function getPosts() {
-  let postContainers = document.getElementById('blog-grid').getElementsByClassName('postContainer');
-  for (let i = 0; i < postContainers.length; i++) {
-    postContainers[i].innerHTML = post;
+function getPostSummaries() {
+  let blogGrid = document.getElementById('blog-grid')
+  for (let i = 0; i < postSummaries.length; i++) {
+    blogGrid.innerHTML += postSummaries[i];
   }
 }
 
-function injectPost() {
+function injectPost(post) {
   const pageDiv = document.getElementById('page');
-  pageDiv.innerHTML = uniquePost;
+  pageDiv.innerHTML = post;
 }
 
 function injectAbout() {
@@ -42,8 +42,8 @@ function injectGallery() {
 }
 
 function pushWindowState(path) {
-  pagePath = window.location.pathname;
-  if (window.location.pathname.slice(1) === path.slice(1)) { // a reduced way of comparing these slightly different path formats 
+  let pagePath = window.location.pathname;
+  if (pagePath.slice(1) === path.slice(1)) { // a reduced way of comparing these slightly different path formats 
     return;                                                     // relies on (''.slice(1) === '') being true
   }
   window.history.pushState(
@@ -58,21 +58,24 @@ window.onpopstate = () => {
 }
 
 function route() {
-  pagePath = window.location.pathname;
-  newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
+  let pagePath = window.location.pathname;
+  let newPage = (pagePath === '/') ? 'home' : pagePath.slice(1); // remove leading /
   injectPage(newPage);
 }
 
 function injectPage(page) {
+  const folders = page.split('/');
+  if (page.startsWith('blog/') && folders[folders.length - 1] in posts) {
+    console.log('Entered blog post place');
+    injectPost(posts[folders[folders.length - 1]]);
+    return;
+  }
   switch(page) {
     case 'home':
       injectHome();
       break;
     case 'blog':
       injectBlog();
-      break;
-    case 'blog/uniquePost':
-      injectPost();
       break;
     case 'about':
       injectAbout();
