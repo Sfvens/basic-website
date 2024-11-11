@@ -3,6 +3,7 @@
   border-radius: 1em;
   border-color: white;
   padding: 1em;
+  white-space: pre-wrap;
 }
 
 .postSummary button {
@@ -32,4 +33,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1em;
+}
+
+.post {
+  white-space: pre-wrap;
 }
