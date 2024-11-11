@@ -66,7 +66,6 @@ function route() {
 function injectPage(page) {
   const folders = page.split('/');
   if (page.startsWith('blog/') && folders[folders.length - 1] in posts) {
-    console.log('Entered blog post place');
     injectPost(posts[folders[folders.length - 1]]);
     return;
   }
