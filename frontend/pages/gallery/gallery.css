@@ -1,0 +1,17 @@
+.gallery-grid {
+  padding-top: 1em;
+  max-width: 65%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+}
+
+.gallery-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.attribution {
+  color: white;
+}
